@@ -119,6 +119,8 @@
     background:var(--accent-gold); transition:width .3s var(--ease);
   }
   .nav-links a:hover::after{width:100%;}
+  .nav-links a.active{color:var(--accent-gold); border:1px solid var(--accent-gold); border-radius:100px; padding:4px 14px;}
+  .nav-links a.active::after{display:none;}
 
   .btn{
     display:inline-flex; align-items:center; justify-content:center; gap:8px;
@@ -633,9 +635,9 @@
       <small>yaşam alanı figürleri</small>
     </a>
     <nav class="nav-links">
-      <a href="#" onclick="goTo('page-home'); return false;">Anasayfa</a>
+      <a href="#" class="active" data-page="page-home" onclick="goTo('page-home'); return false;">Anasayfa</a>
       <a href="#" onclick="goTo('page-home','figures'); return false;">Koleksiyon</a>
-      <a href="#" onclick="goTo('page-product'); return false;">Kaz Heykeli</a>
+      <a href="#" data-page="page-product" onclick="goTo('page-product'); return false;">Kaz Heykeli</a>
       <a href="#" onclick="scrollFooter(); return false;">İletişim</a>
     </nav>
     <a href="#" class="btn btn-primary nav-cta btn-small" onclick="goTo('page-product','satin-al'); return false;">1.299 TL — Satın Al</a>
@@ -968,7 +970,7 @@
         </span>
         <span class="logo-text"><span class="logo-word logo-word--komsu">Komşu</span><span class="logo-word logo-word--hane">Hane</span></span>
       </a>
-      <p>Türkiye'de üretilen, elle boyanan dekoratif figürler. Kaz ile başlıyoruz, zamanla yeni sakinler katılacak.</p>
+      <p>Türkiye'de üretilen, elle boyanan dekoratif figürler. Yeni sakinler yakında.</p>
     </div>
     <div class="footer-cols">
       <div class="footer-col">
@@ -1053,6 +1055,9 @@
     const target = document.getElementById(pageId);
     target.style.display = '';
     currentPage = pageId;
+    document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
+      a.classList.toggle('active', a.dataset.page === pageId);
+    });
     target.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
     stickyBar.classList.toggle('show', pageId === 'page-product' && window.scrollY > 480);
   }
