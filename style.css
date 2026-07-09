@@ -278,6 +278,40 @@
   .home-hero-visual .stage-glow{ width:600px; height:320px; }
   .home-hero-visual .stage-ring{ width:500px; height:250px; }
 
+  /* ---- kaz-heykeli hero carousel (reuses generic .carousel-* rules) ---- */
+  .hero-visual .carousel-frame{ width:min(560px, 92vw); }
+  .hero-visual .stage-glow{ width:600px; height:320px; }
+  .hero-visual .stage-ring{ width:500px; height:250px; }
+
+  /* ---- kaz-heykeli page background photo carousel ---- */
+  .page-bg-carousel{
+    position:fixed; inset:0;
+    z-index:-1;
+    overflow:hidden;
+    pointer-events:none;
+  }
+  .page-bg-track{
+    display:flex;
+    height:100%;
+    width:max-content;
+    animation:pageBgSlide 120s linear infinite;
+  }
+  .page-bg-img{
+    height:100%; width:auto;
+    object-fit:cover;
+    filter:saturate(.55) brightness(.45);
+    flex-shrink:0;
+  }
+  .page-bg-tint{
+    position:absolute; inset:0;
+    background:var(--bg);
+    opacity:.8;
+  }
+  @keyframes pageBgSlide{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+
   .carousel-viewport{
     position:relative;
     width:100%;
