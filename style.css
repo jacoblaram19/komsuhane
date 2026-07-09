@@ -294,7 +294,7 @@
     display:flex;
     height:100%;
     width:max-content;
-    animation:pageBgSlide 120s linear infinite;
+    animation:pageBgSlide 240s linear infinite;
   }
   .page-bg-img{
     height:100%; width:auto;
@@ -305,7 +305,7 @@
   .page-bg-tint{
     position:absolute; inset:0;
     background:var(--bg);
-    opacity:.8;
+    opacity:.91;
   }
   @keyframes pageBgSlide{
     from{ transform:translateX(0); }
