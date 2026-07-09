@@ -270,6 +270,41 @@
     min-height:380px;
   }
   .home-photo-frame{ width:min(280px, 70vw); }
+
+  /* ---- home hero carousel ---- */
+  .home-photo-frame.carousel-frame{ width:min(460px, 84vw); }
+  .home-hero-visual .stage-glow{ width:520px; height:380px; }
+  .home-hero-visual .stage-ring{ width:420px; height:300px; }
+
+  .carousel-viewport{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/10;
+    overflow:hidden;
+    border-radius:14px;
+    -webkit-mask-image:linear-gradient(to right, transparent 0%, black 14%, black 100%);
+    mask-image:linear-gradient(to right, transparent 0%, black 14%, black 100%);
+  }
+  .carousel-track{
+    display:flex;
+    gap:10px;
+    height:100%;
+    width:max-content;
+    animation:carouselSlide 46s linear infinite;
+  }
+  .carousel-viewport:hover .carousel-track{ animation-play-state:paused; }
+  .carousel-track .carousel-img{
+    height:100%;
+    width:auto;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    border-radius:10px;
+    flex-shrink:0;
+  }
+  @keyframes carouselSlide{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
   .first-tag{
     position:absolute; z-index:3;
     top:8%; right:2%;
