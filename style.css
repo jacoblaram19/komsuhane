@@ -312,10 +312,12 @@
     position:absolute;
     left:-18px; bottom:-24px;
     width:96px;
+    height:96px;
     z-index:3;
   }
+  .detail-inset img{ width:100%; height:100%; }
   @media (max-width:480px){
-    .detail-inset{ width:72px; left:-12px; bottom:-16px; }
+    .detail-inset{ width:72px; height:72px; left:-12px; bottom:-16px; }
   }
   .first-tag--static{ position:static; }
   .first-tag{
@@ -669,6 +671,12 @@
     width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px;
     border:1px solid var(--line);
   }
+  @media (max-width:600px){
+    .photo-grid{ grid-template-columns:repeat(2, 1fr); gap:10px; }
+  }
+  .photo-grid .extra-photo{ display:none; }
+  .photo-grid.expanded .extra-photo{ display:block; }
+  .show-more-btn{ margin-top:18px; }
 
   /* ================= STANDALONE PAGE TOP SPACING ================= */
   .page-top{padding-top:170px;}

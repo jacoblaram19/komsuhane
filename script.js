@@ -73,3 +73,11 @@
       this.reset();
     });
   }
+
+  document.querySelectorAll('.show-more-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.target);
+      if(target) target.classList.add('expanded');
+      btn.remove();
+    });
+  });
