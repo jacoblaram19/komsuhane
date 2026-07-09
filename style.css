@@ -266,7 +266,8 @@
   }
   .home-hero-visual{
     position:relative;
-    display:flex; align-items:center; justify-content:center;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:14px;
     min-height:380px;
   }
   .home-photo-frame{ width:min(280px, 70vw); }
@@ -309,13 +310,14 @@
 
   .detail-inset{
     position:absolute;
-    left:-22px; bottom:-30px;
-    width:112px;
+    left:-18px; bottom:-24px;
+    width:96px;
     z-index:3;
   }
   @media (max-width:480px){
-    .detail-inset{ width:84px; left:-14px; bottom:-20px; }
+    .detail-inset{ width:72px; left:-12px; bottom:-16px; }
   }
+  .first-tag--static{ position:static; }
   .first-tag{
     position:absolute; z-index:3;
     top:8%; right:2%;
