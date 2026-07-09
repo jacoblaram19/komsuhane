@@ -272,18 +272,19 @@
   .home-photo-frame{ width:min(280px, 70vw); }
 
   /* ---- home hero carousel ---- */
-  .home-photo-frame.carousel-frame{ width:min(460px, 84vw); }
-  .home-hero-visual .stage-glow{ width:520px; height:380px; }
-  .home-hero-visual .stage-ring{ width:420px; height:300px; }
+  .carousel-wrap{ position:relative; }
+  .home-photo-frame.carousel-frame{ width:min(560px, 92vw); }
+  .home-hero-visual .stage-glow{ width:600px; height:320px; }
+  .home-hero-visual .stage-ring{ width:500px; height:250px; }
 
   .carousel-viewport{
     position:relative;
     width:100%;
-    aspect-ratio:16/10;
+    aspect-ratio:5/2;
     overflow:hidden;
     border-radius:14px;
-    -webkit-mask-image:linear-gradient(to right, transparent 0%, black 14%, black 100%);
-    mask-image:linear-gradient(to right, transparent 0%, black 14%, black 100%);
+    -webkit-mask-image:linear-gradient(to right, transparent 0%, black 10%, black 100%);
+    mask-image:linear-gradient(to right, transparent 0%, black 10%, black 100%);
   }
   .carousel-track{
     display:flex;
@@ -304,6 +305,16 @@
   @keyframes carouselSlide{
     from{ transform:translateX(0); }
     to{ transform:translateX(-50%); }
+  }
+
+  .detail-inset{
+    position:absolute;
+    left:-22px; bottom:-30px;
+    width:112px;
+    z-index:3;
+  }
+  @media (max-width:480px){
+    .detail-inset{ width:84px; left:-14px; bottom:-20px; }
   }
   .first-tag{
     position:absolute; z-index:3;
