@@ -27,7 +27,12 @@
       tabBtns.forEach(b => b.classList.remove('active'));
       tabPanels.forEach(p => p.classList.remove('active'));
       btn.classList.add('active');
-      document.getElementById(btn.dataset.tab).classList.add('active');
+      const panel = document.getElementById(btn.dataset.tab);
+      panel.classList.add('active');
+      // panel was display:none, so its .reveal children may never have
+      // intersected while hidden (some mobile browsers never re-check
+      // after display:none -> visible) - force them visible on open
+      panel.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
     });
   });
 
