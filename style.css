@@ -536,7 +536,7 @@
   .purchase-price .now{font-family:var(--font-display); font-size:34px; font-weight:600;}
   .purchase-price .label{font-family:var(--font-mono); font-size:11px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.08em;}
   .price-main{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;}
-  .price-was{text-decoration:line-through; color:var(--ink-faint); font-weight:400;}
+  .price-was{text-decoration:line-through; text-decoration-thickness:1px; color:var(--ink-faint); font-weight:400;}
   .purchase-price .price-was{font-size:18px;}
   .discount-badge{
     display:inline-flex; align-items:center;
