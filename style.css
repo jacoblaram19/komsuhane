@@ -629,7 +629,7 @@
   .secure-note svg{width:14px; height:14px;}
 
   /* ================= FOOTER ================= */
-  footer{border-top:1px solid var(--line); padding:56px 0 34px;}
+  footer{border-top:1px solid var(--line); padding:88px 0 34px;}
   .footer-row{display:flex; flex-wrap:wrap; justify-content:space-between; gap:32px; margin-bottom:36px;}
   .footer-brand p{color:var(--ink-faint); font-size:13.5px; max-width:280px; margin-top:12px;}
   .footer-cols{display:flex; gap:56px; flex-wrap:wrap;}
@@ -680,7 +680,15 @@
   @media (min-width:860px){ .sticky-bar{display:none;} }
 
   @media (max-width:859px){
-    .nav-links{display:none;}
+    .nav-row{ flex-wrap:wrap; row-gap:14px; }
+    .nav-links{
+      order:3;
+      width:100%;
+      justify-content:center;
+      gap:8px 16px;
+      flex-wrap:wrap;
+      font-size:13px;
+    }
     .nav-cta{display:none !important;}
   }
 
