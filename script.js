@@ -81,3 +81,10 @@
       btn.remove();
     });
   });
+
+  document.querySelectorAll('.show-gallery-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const galeriTab = document.getElementById('galeri');
+      if(galeriTab) galeriTab.click();
+    });
+  });

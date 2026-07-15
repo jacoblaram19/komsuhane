@@ -711,3 +711,91 @@
   /* ================= STANDALONE PAGE TOP SPACING ================= */
   .page-top{padding-top:170px;}
   @media (min-width:920px){ .page-top{padding-top:190px;} }
+
+  /* ================= HOME MEGA HERO ================= */
+  .mega-hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+  }
+  .mega-hero-bg{
+    position:absolute; inset:0;
+    z-index:0;
+  }
+  .mega-hero-bg img{
+    width:100%; height:100%;
+    object-fit:cover;
+    object-position:center 55%;
+    filter:saturate(.5) brightness(.62) sepia(.1) hue-rotate(-8deg);
+  }
+  .mega-hero-tint{
+    position:absolute; inset:0;
+    z-index:1;
+    background:
+      linear-gradient(180deg, rgba(20,29,23,.62) 0%, rgba(20,29,23,.6) 45%, rgba(20,29,23,.88) 100%);
+  }
+  .mega-hero-content{
+    position:relative; z-index:2;
+    width:100%;
+    text-align:center;
+    padding-top:100px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .mega-hero-eyebrow{ justify-content:center; margin-bottom:22px; }
+  .mega-hero-title{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:clamp(56px, 11vw, 148px);
+    line-height:.98;
+    letter-spacing:-.01em;
+    text-shadow:0 6px 34px rgba(0,0,0,.45);
+    margin-bottom:26px;
+  }
+  .mega-hero-sub{
+    color:var(--ink-dim);
+    font-size:clamp(15px, 1.6vw, 18.5px);
+    max-width:520px;
+    margin-bottom:38px;
+    text-shadow:0 2px 18px rgba(0,0,0,.5);
+  }
+  .mega-hero-actions{
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:18px;
+  }
+  .btn-hero-ghost{
+    border-color:rgba(236,228,212,0.4);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+    background:rgba(20,29,23,0.25);
+  }
+  .btn-hero-ghost:hover{ background:rgba(20,29,23,0.4); }
+
+  .btn-shine{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(135deg, var(--accent-gold), var(--accent-rust));
+    color:#241a0f;
+    font-weight:600;
+    box-shadow:0 14px 34px -10px rgba(207,159,69,.6);
+  }
+  .btn-shine:hover{ transform:translateY(-2px); }
+  .btn-shine::after{
+    content:"";
+    position:absolute;
+    top:0; left:-60%;
+    width:35%; height:100%;
+    background:linear-gradient(115deg, transparent, rgba(255,255,255,.65), transparent);
+    transform:skewX(-18deg);
+    animation:heroShineSweep 3.4s ease-in-out infinite;
+  }
+  @keyframes heroShineSweep{
+    0%{ left:-60%; }
+    50%{ left:130%; }
+    100%{ left:130%; }
+  }
+  @media (prefers-reduced-motion:reduce){
+    .btn-shine::after{ animation:none; display:none; }
+  }
