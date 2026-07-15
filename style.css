@@ -789,6 +789,12 @@
     font-weight:600;
     box-shadow:0 14px 34px -10px rgba(207,159,69,.6);
   }
+  .btn-shine .price-was{ color:rgba(36,26,15,.6); }
+  .mega-hero-trust{
+    margin-top:34px;
+    justify-content:center;
+  }
+  .mega-hero-trust .trust-item{ text-shadow:0 2px 14px rgba(0,0,0,.5); }
   .btn-shine:hover{ transform:translateY(-2px); }
   .btn-shine::after{
     content:"";

@@ -1,6 +1,18 @@
   const header = document.getElementById('site-header');
   const stickyBar = document.getElementById('sticky-bar');
 
+  // gelinen sayfada #hash varsa önce en üstten başla, sonra yavaşça
+  // hedefe kay - kullanıcı sayfanın üst kısmını da görsün
+  if (window.location.hash) {
+    const hashTarget = document.getElementById(window.location.hash.slice(1));
+    if (hashTarget) {
+      window.scrollTo(0, 0);
+      setTimeout(() => {
+        hashTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 450);
+    }
+  }
+
   window.addEventListener('scroll', () => {
     const scrolled = window.scrollY > 40;
     header.classList.toggle('scrolled', scrolled);
